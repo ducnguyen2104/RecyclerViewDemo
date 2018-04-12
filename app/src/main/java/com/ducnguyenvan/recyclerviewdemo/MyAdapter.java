@@ -31,8 +31,28 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.txt.setText(items.get(position).getTitle());
+        holder.title.setText(items.get(position).getTitle());
         holder.img.setImageResource(items.get(position).getImg());
+        long time = System.currentTimeMillis() - items.get(position).getTimestamp().getTime();
+        int timePassHours = (int)time/(1000*60*60);
+        if (timePassHours >= 24) {
+            int timePassDays = (int)time/(1000*60*60*24);
+            holder.src.setText(items.get(position).getSource() + "  •  " + timePassDays + " day(s) ago" );
+        }
+        else if (timePassHours >= 1) {
+            holder.src.setText(items.get(position).getSource() + "  •  " + timePassHours + " hour(s) ago" );
+        }
+        else {
+            int timePassMins = (int)time/(1000*60);
+            holder.src.setText(items.get(position).getSource() + "  •  " + timePassMins + " minute(s) ago" );
+        }
+        int numOfComments = items.get(position).getComments();
+        if (numOfComments == 0) {
+            holder.cmts.setText("");
+        }
+        else {
+            holder.cmts.setText(numOfComments + " comment(s)");
+        }
     }
 
     @Override
@@ -42,12 +62,16 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView txt;
+        TextView title;
         ImageView img;
+        TextView src;
+        TextView cmts;
         public MyViewHolder(View itemView) {
             super(itemView);
-            txt = (TextView)itemView.findViewById(R.id.txt_view);
+            title = (TextView)itemView.findViewById(R.id.txtTitle);
             img = (ImageView)itemView.findViewById(R.id.img_view);
+            src = (TextView)itemView.findViewById(R.id.txtSource);
+            cmts = (TextView)itemView.findViewById(R.id.txtComments);
         }
     }
 }
