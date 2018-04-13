@@ -1,49 +1,31 @@
 package com.ducnguyenvan.recyclerviewdemo;
 
+import android.net.Uri;
+
 import java.sql.Timestamp;
 
-public class Item2 extends Object {
+public class ItemVideo extends Object {
 
-    private int img1;
-    private int img2;
-    private int img3;
+    private Uri video;
     private String title;
     private String source;
     private int comments;
     private Timestamp timestamp;
 
-    public Item2(int img1, int img2, int img3, String title, String source, int comments, Timestamp timestamp) {
-        this.img1 = img1;
-        this.img2 = img2;
-        this.img3 = img3;
+    public ItemVideo(Uri video, String title, String source, int comments, Timestamp timestamp) {
+        this.video = video;
         this.title = title;
         this.source = source;
         this.comments = comments;
         this.timestamp = timestamp;
     }
 
-    public int getImg1() {
-        return img1;
+    public Uri getVideo() {
+        return video;
     }
 
-    public void setImg1(int img1) {
-        this.img1 = img1;
-    }
-
-    public int getImg2() {
-        return img2;
-    }
-
-    public void setImg2(int img2) {
-        this.img2 = img2;
-    }
-
-    public int getImg3() {
-        return img3;
-    }
-
-    public void setImg3(int img3) {
-        this.img3 = img3;
+    public void setVideo(Uri video) {
+        this.video = video;
     }
 
     public String getTitle() {

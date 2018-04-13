@@ -2,7 +2,7 @@ package com.ducnguyenvan.recyclerviewdemo;
 
 import java.sql.Timestamp;
 
-public class Item1 extends Object {
+public class Item1Pic extends Object {
     private int img;
     private String title;
     private String source;
@@ -49,7 +49,7 @@ public class Item1 extends Object {
         this.title = title;
     }
 
-    public Item1(int img, String title, String source, int comments, Timestamp timestamp) {
+    public Item1Pic(int img, String title, String source, int comments, Timestamp timestamp) {
         this.img = img;
         this.title = title;
         this.source = source;
