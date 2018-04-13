@@ -1,5 +1,6 @@
 package com.ducnguyenvan.recyclerviewdemo;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
@@ -51,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         listItems.add(new Item1(R.drawable.shironeko, "Shironeko from Chà-pan","Chà-pan", 70, stringToTimestamp("2018-04-02 11:10:00.000")));
         listItems.add(new Item1(R.drawable.sven, "Sven from Dota2","Dota2", 0, stringToTimestamp("2018-04-12 01:10:00.000")));
         listItems.add(new Item1(R.drawable.templar, "Lanaya - Templar Assassin from Dota2","Dota2", 10, stringToTimestamp("2018-04-12 11:08:00.000")));
+        listItems.add(new Item3(Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.test),"Today is Friday 13th...", "Kênh  14", 5, stringToTimestamp("2018-04-12 11:48:00.000")));
         //listItems.add(new Item1(R.drawable.yiproject, "Yi Project from LOL","League Of Legends", 700, stringToTimestamp("2018-03-30 11:10:00.000")));
         //MyAdapter myAdapter = new MyAdapter(listItems, MainActivity.this);
         MyAdapter2 myAdapter2 = new MyAdapter2(listItems, MainActivity.this);
