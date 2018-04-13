@@ -13,10 +13,10 @@ import java.util.ArrayList;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
-    ArrayList<Item> items;
+    ArrayList<Item1> items;
     Context context;
 
-    public MyAdapter(ArrayList<Item> items, Context context) {
+    public MyAdapter(ArrayList<Item1> items, Context context) {
         this.items = items;
         this.context = context;
     }
@@ -25,7 +25,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View itemView = layoutInflater.inflate(R.layout.item_row,parent,false);
+        View itemView = layoutInflater.inflate(R.layout.item1_row,parent,false);
         return new MyViewHolder(itemView);
     }
 
